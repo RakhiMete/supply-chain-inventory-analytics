@@ -1,0 +1,5 @@
+SupplierID,SupplierName,OnTimeDeliveryRate,QualityScore,AverageLeadTime_Days
+"SUP01","Cocoa World Inc.","0.9504","4.33","19"
+"SUP02","Global Sweeteners","0.9877","","35"
+"SUP03","Dairy Farms United","0.9807","4.36","32"
+"SUP04","Packaging Pros","0.8774","4.78","22"
