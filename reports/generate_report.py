@@ -22,9 +22,10 @@ OUT = os.path.join(BASE, "reports")
 def load(folder, parse=True):
     out = {}
     for f in sorted(glob.glob(os.path.join(folder, "*.csv"))):
-        name = os.path.basename(f).replace("_clean.csv", "").replace(".csv", "")
+        name = os.path.splitext(os.path.basename(f))[0]
+        name = name[:-len("_clean")] if name.endswith("_clean") else name
         cols = pd.read_csv(f, nrows=0).columns
-        dates = [c for c in cols if "date" in c.lower()] if parse else []
+        dates = [col for col in cols if "date" in col.lower()] if parse else []
         out[name] = pd.read_csv(f, parse_dates=dates)
     return out
 
@@ -62,7 +63,7 @@ min_wh_share = wh_units.min() / wh_units.sum() * 100
 st = pd.crosstab(po["SupplierID"], po["Status"])
 cancel = st["Cancelled"] / st.sum(axis=1) * 100
 overall_cancel = (po["Status"] == "Cancelled").mean() * 100
-sup = (c["suppliers"].merge(c["supplier_performance"].drop(columns="SupplierName"), on="SupplierID"))
+sup = c["suppliers"].merge(c["supplier_performance"].drop(columns="SupplierName"), on="SupplierID")
 sup["CancelRate"] = sup["SupplierID"].map(cancel)
 s_low = sup.loc[sup["OnTimeDeliveryRate"].idxmin()]
 s_high = sup.loc[sup["OnTimeDeliveryRate"].idxmax()]
@@ -185,13 +186,15 @@ def footer(canvas, doc):
     canvas.restoreState()
 
 story = [Spacer(1, 6 * cm), Paragraph(TITLE, title_style), Spacer(1, 0.5 * cm),
-         Paragraph("Procurement, inventory, shipping and demand analysis", ParagraphStyle("sub", parent=body, fontSize=13, alignment=1)),
+         Paragraph("Procurement, inventory, shipping and demand analysis",
+                   ParagraphStyle("sub", parent=body, fontSize=13, alignment=1)),
          Spacer(1, 1.5 * cm),
          Paragraph(f"Prepared by: {AUTHOR}<br/>Date: {date.today():%d %B %Y}",
                    ParagraphStyle("meta", parent=body, alignment=1)), PageBreak()]
 
 story += [Paragraph("1. Executive Summary", h1), Paragraph(exec_summary, body), Spacer(1, 8),
-          Paragraph("Key figures", h2), Spacer(1, 4), make_table([["Metric", "Value"]] + kpis, [9 * cm, 6 * cm])]
+          Paragraph("Key figures", h2), Spacer(1, 4),
+          make_table([["Metric", "Value"]] + kpis, [9 * cm, 6 * cm])]
 
 story += [Spacer(1, 12), Paragraph("2. Dataset Overview", h1),
           Paragraph("Data was generated with the Excelx Supply Chain and Logistics Data Generator in its "
@@ -205,7 +208,8 @@ cl = [["Table", "Raw rows", "Clean rows", "Removed", "% removed"]]
 for n, d in c.items():
     r = len(raw[n]) if n in raw else len(d)
     cl.append([n, f"{r:,}", f"{len(d):,}", f"{r - len(d):,}", f"{(r - len(d)) / r * 100:.1f}%"])
-story += [make_table(cl, [6 * cm, 2.6 * cm, 2.6 * cm, 2.4 * cm, 2.4 * cm]), Spacer(1, 8), Paragraph("Actions taken", h2)]
+story += [make_table(cl, [6 * cm, 2.6 * cm, 2.6 * cm, 2.4 * cm, 2.4 * cm]), Spacer(1, 8),
+          Paragraph("Actions taken", h2)]
 for t in ["Removed stray spaces from text fields and converted date columns to date type.",
           "Removed exact duplicate rows and repeated IDs.",
           "Dropped rows missing join keys (order, shipment, PO, material, supplier or warehouse IDs).",
@@ -260,9 +264,13 @@ for t in limitations:
     story.append(Paragraph(t, bullet, bulletText="-"))
 
 pdf_path = os.path.join(OUT, "Supply_Chain_Analysis_Report.pdf")
-SimpleDocTemplate(pdf_path, pagesize=A4, leftMargin=2 * cm, rightMargin=2 * cm,
-                  topMargin=2 * cm, bottomMargin=2 * cm, title=TITLE, author=AUTHOR
-                  ).build(story, onFirstPage=footer, onLaterPages=footer)
+try:
+    SimpleDocTemplate(pdf_path, pagesize=A4, leftMargin=2 * cm, rightMargin=2 * cm,
+                      topMargin=2 * cm, bottomMargin=2 * cm, title=TITLE, author=AUTHOR
+                      ).build(story, onFirstPage=footer, onLaterPages=footer)
+except PermissionError:
+    raise SystemExit("\nCould not write the PDF. Close "
+                     "Supply_Chain_Analysis_Report.pdf in every viewer or browser tab, then run again.")
 
 # ---------- 5. Business insights document ----------
 md = [f"# Business Insights - {TITLE}", "", f"Prepared by {AUTHOR}, {date.today():%d %B %Y}", "",

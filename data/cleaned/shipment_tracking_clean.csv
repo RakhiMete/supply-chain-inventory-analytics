@@ -35,7 +35,6 @@ SHP-38,CAR-04,WH-N,Customer Address,2025-12-03,Delayed
 SHP-39,CAR-01,WH-N,Customer Address,2026-07-15,In Transit
 SHP-40,CAR-04,WH-A,Customer Address,2024-06-25,Delivered
 SHP-41,CAR-03,WH-E,Unknown,2025-11-29,In Transit
-SHP-41,CAR-03,WH-E,Customer Address,2025-11-29,In Transit
 SHP-44,CAR-04,WH-E,Customer Address,2024-07-10,Processing
 SHP-45,CAR-04,WH-A,Customer Address,2024-03-14,Delivered
 SHP-46,CAR-04,WH-E,Customer Address,2026-07-12,Processing
@@ -65,7 +64,6 @@ SHP-72,CAR-03,WH-E,Customer Address,2026-07-21,Delivered
 SHP-73,CAR-03,WH-A,Customer Address,2024-09-14,Delayed
 SHP-74,CAR-01,WH-A,Customer Address,2024-04-21,Processing
 SHP-75,CAR-02,WH-E,Customer Address,,Processing
-SHP-75,CAR-02,WH-E,Customer Address,2026-03-21,Processing
 SHP-77,CAR-02,WH-A,Customer Address,2025-10-17,Processing
 SHP-78,CAR-02,WH-A,Customer Address,2025-03-17,Delayed
 SHP-79,CAR-03,WH-A,Customer Address,2026-01-20,Processing
@@ -161,7 +159,6 @@ SHP-173,CAR-02,WH-E,Customer Address,2025-10-03,Delivered
 SHP-174,CAR-01,WH-E,Customer Address,,In Transit
 SHP-175,CAR-02,WH-A,Customer Address,2024-08-29,Delayed
 SHP-176,CAR-02,Unknown,Customer Address,2026-03-02,Delayed
-SHP-176,CAR-02,WH-E,Customer Address,2026-03-02,Delayed
 SHP-178,CAR-03,WH-A,Customer Address,2024-03-11,Delayed
 SHP-179,CAR-04,WH-N,Customer Address,2026-08-13,In Transit
 SHP-180,CAR-02,WH-A,Customer Address,2026-07-21,In Transit
@@ -169,7 +166,6 @@ SHP-181,CAR-03,WH-N,Customer Address,2025-11-06,In Transit
 SHP-182,CAR-02,WH-N,Customer Address,2025-04-18,Processing
 SHP-183,CAR-03,WH-N,Customer Address,2026-06-07,Processing
 SHP-184,Unknown,WH-N,Customer Address,2025-08-07,Processing
-SHP-184,CAR-02,WH-N,Customer Address,2025-08-07,Processing
 SHP-185,CAR-03,WH-E,Customer Address,2025-03-01,Delayed
 SHP-187,CAR-04,WH-E,Customer Address,2025-02-07,In Transit
 SHP-188,CAR-03,WH-A,Customer Address,2026-01-03,In Transit
@@ -243,7 +239,6 @@ SHP-262,CAR-01,WH-A,Customer Address,2024-11-25,Processing
 SHP-263,CAR-04,WH-E,Customer Address,2026-02-03,Delivered
 SHP-264,Unknown,WH-A,Customer Address,2026-07-10,In Transit
 SHP-265,Unknown,WH-E,Customer Address,2026-04-04,Unknown
-SHP-265,CAR-03,WH-E,Customer Address,2026-04-04,Processing
 SHP-267,CAR-02,WH-N,Customer Address,2024-01-10,Processing
 SHP-268,CAR-01,WH-N,Customer Address,,Delayed
 SHP-269,CAR-02,WH-A,Customer Address,2025-12-07,Delivered
@@ -362,7 +357,6 @@ SHP-389,CAR-03,WH-E,Customer Address,2025-11-21,Delayed
 SHP-390,CAR-02,WH-A,Customer Address,2025-03-21,Delivered
 SHP-391,CAR-04,WH-E,Customer Address,2025-05-22,Processing
 SHP-392,Unknown,WH-A,Customer Address,2024-10-11,Delivered
-SHP-392,CAR-02,WH-A,Customer Address,2024-10-11,Delivered
 SHP-394,CAR-03,WH-A,Customer Address,2024-04-16,Delayed
 SHP-395,CAR-03,WH-A,Customer Address,2025-12-09,Processing
 SHP-396,CAR-01,WH-N,Customer Address,2026-07-09,Processing
@@ -388,7 +382,6 @@ SHP-417,CAR-04,WH-A,Customer Address,2026-03-25,Delivered
 SHP-418,Unknown,WH-A,Customer Address,,In Transit
 SHP-419,CAR-03,WH-E,Customer Address,2025-12-17,In Transit
 SHP-420,CAR-01,Unknown,Customer Address,2026-06-09,Delivered
-SHP-420,CAR-01,WH-A,Customer Address,2026-06-09,Delivered
 SHP-422,CAR-03,WH-A,Customer Address,2025-11-30,Delivered
 SHP-423,CAR-03,WH-N,Customer Address,2025-03-29,Processing
 SHP-424,CAR-04,WH-N,Customer Address,,Processing
@@ -608,7 +601,6 @@ SHP-659,CAR-04,WH-A,Customer Address,2025-03-13,Delivered
 SHP-660,CAR-04,WH-N,Customer Address,2025-01-31,Delivered
 SHP-661,CAR-03,WH-E,Customer Address,2024-08-12,In Transit
 SHP-663,CAR-04,WH-N,Unknown,2026-07-12,In Transit
-SHP-663,CAR-04,WH-N,Customer Address,2026-07-12,In Transit
 SHP-665,CAR-01,WH-E,Customer Address,2026-09-14,Processing
 SHP-666,CAR-03,WH-E,Customer Address,2025-07-23,Delivered
 SHP-667,CAR-01,WH-A,Customer Address,2024-11-10,Delivered
@@ -657,7 +649,6 @@ SHP-713,CAR-04,WH-A,Customer Address,2024-08-13,Delivered
 SHP-714,CAR-02,WH-A,Customer Address,2024-07-12,In Transit
 SHP-716,CAR-03,WH-A,Customer Address,2024-04-25,Delayed
 SHP-717,Unknown,WH-E,Customer Address,2025-03-02,In Transit
-SHP-717,CAR-03,WH-E,Customer Address,2025-03-02,In Transit
 SHP-719,CAR-03,WH-E,Customer Address,2026-09-14,Processing
 SHP-720,CAR-03,WH-E,Customer Address,2026-02-03,Delayed
 SHP-721,CAR-02,WH-A,Customer Address,2025-12-12,Processing
@@ -717,7 +708,6 @@ SHP-775,Unknown,WH-A,Customer Address,2026-02-19,In Transit
 SHP-776,CAR-01,WH-N,Customer Address,2024-02-11,In Transit
 SHP-777,CAR-03,WH-E,Customer Address,2025-08-24,In Transit
 SHP-778,CAR-03,WH-N,Customer Address,,In Transit
-SHP-778,CAR-03,WH-N,Customer Address,2025-03-06,In Transit
 SHP-780,CAR-02,WH-E,Customer Address,2026-07-21,In Transit
 SHP-781,CAR-02,WH-E,Customer Address,2024-12-05,In Transit
 SHP-783,CAR-01,WH-A,Customer Address,2024-08-03,Processing
@@ -778,7 +768,6 @@ SHP-839,CAR-01,WH-N,Unknown,2024-06-20,Delivered
 SHP-840,CAR-01,WH-N,Customer Address,2024-02-20,Delivered
 SHP-841,CAR-04,WH-N,Customer Address,2025-04-21,Delivered
 SHP-842,CAR-04,WH-N,Unknown,2026-10-30,Delayed
-SHP-842,CAR-04,WH-N,Customer Address,2026-10-30,Delayed
 SHP-844,CAR-02,WH-N,Customer Address,2024-04-12,Delivered
 SHP-845,CAR-04,WH-A,Customer Address,2025-05-18,Processing
 SHP-846,CAR-03,WH-E,Customer Address,2024-05-13,Processing
@@ -922,7 +911,6 @@ SHP-993,CAR-03,WH-E,Unknown,2024-04-17,Processing
 SHP-994,CAR-01,WH-N,Customer Address,2026-03-31,Processing
 SHP-995,CAR-04,WH-A,Customer Address,2025-07-19,Delivered
 SHP-996,CAR-02,Unknown,Customer Address,2025-10-11,Processing
-SHP-996,CAR-02,WH-N,Customer Address,2025-10-11,Processing
 SHP-998,CAR-02,WH-E,Customer Address,2024-07-16,Delayed
 SHP-999,CAR-01,WH-E,Customer Address,2025-10-13,Delayed
 SHP-1000,CAR-03,WH-A,Customer Address,2024-11-07,Unknown
@@ -977,10 +965,8 @@ SHP-1053,CAR-04,WH-A,Customer Address,2025-03-10,Processing
 SHP-1054,CAR-01,WH-A,Customer Address,2025-04-19,Processing
 SHP-1055,CAR-03,WH-A,Customer Address,2026-09-27,Processing
 SHP-1056,CAR-03,Unknown,Customer Address,2025-06-28,Delayed
-SHP-1056,CAR-03,WH-A,Customer Address,2025-06-28,Delayed
 SHP-1058,CAR-02,WH-A,Customer Address,2025-01-02,Delivered
 SHP-1059,CAR-02,WH-N,Customer Address,2025-03-09,Unknown
-SHP-1059,CAR-02,WH-N,Customer Address,2025-03-09,Processing
 SHP-1061,CAR-01,WH-A,Customer Address,2025-10-25,Delivered
 SHP-1063,CAR-02,WH-A,Customer Address,2024-11-19,Processing
 SHP-1064,CAR-02,WH-A,Customer Address,2026-09-11,Processing
@@ -1042,7 +1028,6 @@ SHP-1124,CAR-03,WH-E,Customer Address,2024-06-23,Processing
 SHP-1125,CAR-04,WH-E,Customer Address,2025-02-01,Delayed
 SHP-1127,CAR-03,WH-A,Customer Address,2026-04-20,Processing
 SHP-1128,CAR-02,WH-E,Unknown,2026-03-09,Processing
-SHP-1128,CAR-02,WH-E,Customer Address,2026-03-09,Processing
 SHP-1130,CAR-01,WH-E,Customer Address,2024-05-02,In Transit
 SHP-1131,CAR-02,WH-N,Customer Address,2025-02-15,Processing
 SHP-1132,CAR-02,WH-E,Customer Address,2026-11-11,Delayed
@@ -1208,7 +1193,6 @@ SHP-1301,CAR-01,WH-E,Customer Address,2025-02-12,Delivered
 SHP-1302,CAR-01,WH-A,Customer Address,2025-02-18,Delayed
 SHP-1303,CAR-04,WH-E,Customer Address,2026-03-30,Delayed
 SHP-1304,CAR-04,WH-E,Unknown,2025-11-10,Delayed
-SHP-1304,CAR-04,WH-E,Customer Address,2025-11-10,Delayed
 SHP-1306,CAR-02,WH-A,Customer Address,2026-09-20,In Transit
 SHP-1307,CAR-02,WH-N,Customer Address,2024-10-18,In Transit
 SHP-1308,CAR-01,WH-N,Customer Address,2025-06-19,In Transit
@@ -1307,10 +1291,8 @@ SHP-1405,CAR-01,WH-A,Customer Address,2026-09-09,Delayed
 SHP-1406,CAR-02,WH-A,Customer Address,2025-08-10,Delivered
 SHP-1407,CAR-03,Unknown,Customer Address,2025-01-19,Delivered
 SHP-1408,CAR-01,Unknown,Customer Address,2025-12-26,Delayed
-SHP-1408,CAR-01,WH-N,Customer Address,2025-12-26,Delayed
 SHP-1410,CAR-04,WH-E,Customer Address,2026-11-11,In Transit
 SHP-1411,Unknown,WH-A,Customer Address,2026-09-05,Delayed
-SHP-1411,CAR-03,WH-A,Customer Address,2026-09-05,Delayed
 SHP-1413,CAR-02,WH-E,Customer Address,2025-12-06,Delivered
 SHP-1414,Unknown,WH-N,Customer Address,2025-01-28,Delayed
 SHP-1415,CAR-02,WH-A,Customer Address,2026-11-05,Processing
@@ -1361,7 +1343,6 @@ SHP-1463,CAR-02,WH-N,Customer Address,2024-12-16,In Transit
 SHP-1465,CAR-01,WH-E,Customer Address,2025-12-12,Delayed
 SHP-1467,CAR-04,WH-E,Customer Address,2026-09-27,Delivered
 SHP-1468,CAR-04,Unknown,Customer Address,2026-01-30,Processing
-SHP-1468,CAR-04,WH-E,Customer Address,2026-01-30,Processing
 SHP-1470,CAR-03,WH-E,Customer Address,2024-04-28,Processing
 SHP-1471,CAR-04,WH-E,Customer Address,2026-08-07,In Transit
 SHP-1472,CAR-04,WH-N,Customer Address,2025-05-13,In Transit
@@ -1376,7 +1357,6 @@ SHP-1482,CAR-02,Unknown,Customer Address,,Delivered
 SHP-1483,CAR-02,WH-E,Customer Address,2024-10-31,Unknown
 SHP-1484,CAR-02,WH-A,Customer Address,2024-03-16,Processing
 SHP-1485,CAR-03,WH-E,Unknown,2024-05-10,In Transit
-SHP-1485,CAR-03,WH-E,Customer Address,2024-05-10,In Transit
 SHP-1487,CAR-02,WH-E,Customer Address,2025-06-19,Unknown
 SHP-1488,CAR-04,WH-E,Customer Address,2026-06-18,Unknown
 SHP-1489,CAR-02,WH-E,Customer Address,2024-06-25,Delivered
@@ -1426,7 +1406,6 @@ SHP-1536,CAR-02,WH-N,Customer Address,2026-03-30,Delivered
 SHP-1537,CAR-02,WH-A,Customer Address,2026-05-05,Processing
 SHP-1538,CAR-03,WH-A,Customer Address,2024-05-15,Processing
 SHP-1539,Unknown,WH-E,Customer Address,2024-10-01,Processing
-SHP-1539,CAR-03,WH-E,Customer Address,2024-10-01,Processing
 SHP-1541,CAR-04,WH-A,Customer Address,2024-12-03,Delayed
 SHP-1542,CAR-01,WH-A,Customer Address,2025-01-08,In Transit
 SHP-1543,CAR-03,WH-N,Customer Address,2026-03-23,Unknown
@@ -1531,7 +1510,6 @@ SHP-1651,CAR-02,WH-E,Customer Address,2025-07-26,Delayed
 SHP-1652,CAR-01,WH-N,Customer Address,2024-12-05,In Transit
 SHP-1654,CAR-01,WH-N,Customer Address,2024-06-05,In Transit
 SHP-1655,Unknown,WH-A,Customer Address,2025-09-13,Delivered
-SHP-1655,CAR-03,WH-A,Customer Address,2025-09-13,Delivered
 SHP-1657,CAR-01,WH-N,Customer Address,2025-03-31,Delivered
 SHP-1658,CAR-02,WH-A,Customer Address,2024-06-26,Delayed
 SHP-1659,Unknown,WH-E,Customer Address,2024-02-05,Processing
@@ -1558,7 +1536,6 @@ SHP-1680,CAR-01,WH-A,Customer Address,,Delayed
 SHP-1681,CAR-04,WH-A,Customer Address,2024-05-01,Delivered
 SHP-1682,Unknown,WH-N,Customer Address,2024-11-22,Delivered
 SHP-1684,Unknown,WH-A,Customer Address,2025-02-10,In Transit
-SHP-1684,CAR-01,WH-A,Customer Address,2025-02-10,In Transit
 SHP-1686,CAR-02,WH-E,Customer Address,2025-01-14,In Transit
 SHP-1687,CAR-01,WH-E,Unknown,2026-04-30,Delivered
 SHP-1688,CAR-02,WH-N,Customer Address,2025-12-03,Delayed
@@ -1694,7 +1671,6 @@ SHP-1827,CAR-02,WH-N,Customer Address,2025-10-12,Processing
 SHP-1828,Unknown,WH-A,Customer Address,,Delivered
 SHP-1829,CAR-04,WH-N,Customer Address,2025-02-16,In Transit
 SHP-1830,Unknown,WH-N,Customer Address,2025-10-09,Processing
-SHP-1830,CAR-02,WH-N,Customer Address,2025-10-09,Processing
 SHP-1832,CAR-03,WH-A,Customer Address,2025-12-05,In Transit
 SHP-1833,CAR-04,WH-E,Customer Address,2024-05-26,Delivered
 SHP-1834,CAR-02,WH-E,Customer Address,2024-10-25,Delivered
@@ -1880,7 +1856,6 @@ SHP-2027,CAR-03,WH-N,Customer Address,2026-06-14,Delivered
 SHP-2028,CAR-03,WH-N,Customer Address,2025-05-04,In Transit
 SHP-2029,CAR-04,WH-A,Customer Address,2024-08-29,Processing
 SHP-2030,CAR-01,WH-N,Unknown,2025-12-01,In Transit
-SHP-2030,CAR-01,WH-N,Customer Address,2025-12-01,In Transit
 SHP-2032,CAR-01,WH-E,Customer Address,,In Transit
 SHP-2033,CAR-01,Unknown,Customer Address,2026-08-17,In Transit
 SHP-2034,CAR-02,WH-A,Customer Address,2025-11-22,In Transit
@@ -1913,7 +1888,6 @@ SHP-2063,CAR-01,WH-N,Customer Address,2025-10-25,Delayed
 SHP-2064,CAR-01,WH-N,Customer Address,2025-04-19,Unknown
 SHP-2065,CAR-04,WH-N,Customer Address,2024-10-11,Delivered
 SHP-2066,CAR-02,WH-E,Customer Address,,Processing
-SHP-2066,CAR-02,WH-E,Customer Address,2026-02-28,Processing
 SHP-2068,CAR-03,Unknown,Customer Address,2024-07-27,In Transit
 SHP-2069,CAR-03,WH-N,Customer Address,2025-10-03,Processing
 SHP-2070,CAR-01,WH-A,Customer Address,2024-12-31,In Transit
@@ -2177,7 +2151,6 @@ SHP-2355,CAR-01,WH-N,Customer Address,2024-12-26,Delayed
 SHP-2356,CAR-01,WH-N,Customer Address,2026-11-04,Delayed
 SHP-2357,CAR-01,WH-N,Customer Address,2024-10-14,Delayed
 SHP-2358,Unknown,WH-E,Customer Address,2026-01-23,Delayed
-SHP-2358,CAR-02,WH-E,Customer Address,2026-01-23,Delayed
 SHP-2359,CAR-01,WH-E,Customer Address,2025-08-07,In Transit
 SHP-2361,CAR-01,WH-A,Customer Address,2024-03-31,Delayed
 SHP-2362,CAR-01,WH-A,Customer Address,2024-10-19,Processing
@@ -2293,7 +2266,6 @@ SHP-2486,CAR-04,WH-N,Customer Address,2025-04-11,Delayed
 SHP-2487,CAR-02,WH-N,Customer Address,2024-05-13,In Transit
 SHP-2488,CAR-04,WH-A,Customer Address,2024-01-08,In Transit
 SHP-2489,CAR-03,Unknown,Customer Address,2024-02-23,Delayed
-SHP-2489,CAR-03,WH-E,Customer Address,2024-02-23,Delayed
 SHP-2491,CAR-01,WH-E,Customer Address,2026-07-29,Delayed
 SHP-2492,CAR-04,WH-A,Customer Address,2024-08-28,Delivered
 SHP-2493,CAR-01,WH-A,Customer Address,2025-06-21,Delivered
@@ -2355,7 +2327,6 @@ SHP-2551,CAR-03,Unknown,Customer Address,2024-10-02,Delivered
 SHP-2552,CAR-04,WH-A,Customer Address,2024-10-07,In Transit
 SHP-2553,CAR-04,WH-E,Customer Address,2025-01-07,Processing
 SHP-2554,CAR-04,WH-A,Customer Address,2024-04-16,Unknown
-SHP-2554,CAR-04,WH-A,Customer Address,2024-04-16,Processing
 SHP-2556,Unknown,WH-E,Customer Address,2026-04-01,Delivered
 SHP-2557,CAR-02,WH-N,Customer Address,2026-08-31,Delivered
 SHP-2558,CAR-01,WH-E,Customer Address,2024-08-24,Delayed
@@ -2409,7 +2380,6 @@ SHP-2609,CAR-02,WH-E,Customer Address,2024-07-02,Delivered
 SHP-2611,Unknown,WH-A,Customer Address,2026-01-21,Delayed
 SHP-2612,CAR-01,WH-A,Customer Address,2025-04-21,Delayed
 SHP-2613,CAR-01,WH-N,Customer Address,2024-11-09,Unknown
-SHP-2613,CAR-01,WH-N,Customer Address,2024-11-09,Processing
 SHP-2615,CAR-02,WH-E,Customer Address,2026-03-03,Delivered
 SHP-2617,CAR-03,WH-A,Customer Address,2025-12-10,In Transit
 SHP-2619,CAR-03,WH-N,Customer Address,2024-11-25,Delivered
@@ -2432,7 +2402,6 @@ SHP-2635,CAR-03,WH-A,Customer Address,2024-09-19,Processing
 SHP-2636,CAR-04,WH-N,Customer Address,2024-05-14,Delayed
 SHP-2637,CAR-01,WH-E,Customer Address,2024-07-03,Delayed
 SHP-2638,Unknown,WH-E,Unknown,2026-04-26,In Transit
-SHP-2638,CAR-03,WH-E,Customer Address,2026-04-26,In Transit
 SHP-2640,CAR-01,WH-E,Customer Address,2025-04-02,Processing
 SHP-2641,CAR-04,WH-N,Customer Address,2025-01-17,Delayed
 SHP-2642,CAR-03,WH-A,Customer Address,2025-08-29,Delayed
@@ -2506,7 +2475,6 @@ SHP-2716,CAR-02,WH-N,Customer Address,2026-02-13,In Transit
 SHP-2717,CAR-03,WH-E,Customer Address,2025-06-04,Delayed
 SHP-2718,CAR-04,WH-E,Customer Address,2025-05-31,Delayed
 SHP-2719,CAR-04,WH-A,Unknown,2025-10-19,Unknown
-SHP-2719,CAR-04,WH-A,Customer Address,2025-10-19,Delivered
 SHP-2721,CAR-03,WH-E,Customer Address,2025-06-18,In Transit
 SHP-2722,CAR-01,WH-E,Customer Address,2026-10-09,In Transit
 SHP-2724,CAR-04,Unknown,Customer Address,2025-02-18,Delivered
@@ -2566,7 +2534,6 @@ SHP-2784,CAR-02,WH-A,Customer Address,2025-09-30,Delivered
 SHP-2785,CAR-04,WH-N,Customer Address,2024-11-11,Delayed
 SHP-2786,CAR-04,WH-A,Customer Address,2025-01-31,Delayed
 SHP-2787,Unknown,WH-N,Customer Address,2024-06-21,Unknown
-SHP-2787,CAR-04,WH-N,Customer Address,2024-06-21,In Transit
 SHP-2789,CAR-03,WH-E,Customer Address,2024-05-10,Delayed
 SHP-2790,CAR-04,WH-N,Customer Address,2026-03-25,Delivered
 SHP-2791,CAR-04,WH-A,Customer Address,2025-12-22,Processing
@@ -2576,7 +2543,6 @@ SHP-2795,Unknown,WH-E,Customer Address,2025-09-03,Delayed
 SHP-2796,CAR-01,WH-N,Customer Address,2025-12-18,Delayed
 SHP-2797,CAR-01,WH-E,Unknown,2026-10-12,Delayed
 SHP-2798,CAR-03,WH-A,Customer Address,2024-10-29,Unknown
-SHP-2798,CAR-03,WH-A,Customer Address,2024-10-29,In Transit
 SHP-2800,CAR-01,WH-N,Customer Address,2025-09-15,Processing
 SHP-2801,CAR-03,WH-A,Customer Address,2025-04-09,In Transit
 SHP-2802,CAR-02,WH-E,Customer Address,2024-03-12,In Transit
@@ -2622,7 +2588,6 @@ SHP-2844,CAR-02,WH-N,Customer Address,2026-06-13,In Transit
 SHP-2845,CAR-03,WH-E,Customer Address,2025-09-19,Processing
 SHP-2846,CAR-03,WH-E,Customer Address,2025-09-29,In Transit
 SHP-2847,CAR-01,WH-E,Customer Address,2024-11-17,Unknown
-SHP-2847,CAR-01,WH-E,Customer Address,2024-11-17,Processing
 SHP-2849,CAR-02,WH-E,Customer Address,2026-09-26,Delivered
 SHP-2850,CAR-04,WH-A,Customer Address,2025-05-03,Delivered
 SHP-2851,Unknown,WH-N,Customer Address,2025-09-29,In Transit
@@ -2641,7 +2606,6 @@ SHP-2863,CAR-04,WH-E,Customer Address,2025-06-04,Delayed
 SHP-2864,CAR-03,Unknown,Customer Address,2024-09-18,Delivered
 SHP-2865,CAR-02,WH-E,Customer Address,2026-05-19,In Transit
 SHP-2866,CAR-01,Unknown,Customer Address,2024-07-07,In Transit
-SHP-2866,CAR-01,WH-N,Customer Address,2024-07-07,In Transit
 SHP-2868,CAR-01,WH-E,Customer Address,2025-03-25,In Transit
 SHP-2869,CAR-02,WH-E,Customer Address,2025-04-24,In Transit
 SHP-2870,CAR-03,Unknown,Customer Address,2026-10-27,In Transit
@@ -2921,7 +2885,6 @@ SHP-3169,CAR-01,Unknown,Customer Address,2026-03-26,Delayed
 SHP-3170,CAR-03,WH-N,Customer Address,2024-12-25,In Transit
 SHP-3171,CAR-04,WH-E,Customer Address,2026-01-02,Unknown
 SHP-3172,CAR-01,WH-E,Unknown,2026-04-01,In Transit
-SHP-3172,CAR-01,WH-E,Customer Address,2026-04-01,In Transit
 SHP-3174,CAR-04,WH-E,Customer Address,2026-05-04,Unknown
 SHP-3175,CAR-04,WH-A,Customer Address,2024-04-04,Delivered
 SHP-3176,CAR-01,WH-N,Customer Address,2025-02-13,Processing
@@ -2934,13 +2897,11 @@ SHP-3182,CAR-03,WH-N,Customer Address,2024-10-29,Processing
 SHP-3183,Unknown,Unknown,Customer Address,2024-01-24,Delivered
 SHP-3184,CAR-02,WH-E,Customer Address,2026-03-07,Processing
 SHP-3185,CAR-02,Unknown,Customer Address,2025-03-06,Unknown
-SHP-3185,CAR-02,WH-N,Customer Address,2025-03-06,Processing
 SHP-3187,CAR-03,WH-N,Customer Address,2025-11-09,Delivered
 SHP-3188,CAR-04,WH-N,Customer Address,2025-09-23,In Transit
 SHP-3189,CAR-02,WH-N,Customer Address,2024-12-22,Delayed
 SHP-3190,CAR-03,WH-A,Customer Address,2024-06-21,Delivered
 SHP-3191,CAR-02,Unknown,Customer Address,2025-10-05,Delayed
-SHP-3191,CAR-02,WH-E,Customer Address,2025-10-05,Delayed
 SHP-3193,CAR-03,WH-A,Customer Address,2026-04-19,Delivered
 SHP-3194,CAR-03,WH-E,Customer Address,2026-08-09,In Transit
 SHP-3195,CAR-03,WH-E,Customer Address,2024-03-01,Processing
@@ -2987,7 +2948,6 @@ SHP-3241,CAR-02,WH-E,Customer Address,2024-10-14,Delayed
 SHP-3242,CAR-01,WH-E,Customer Address,2025-07-17,Delayed
 SHP-3243,CAR-01,WH-A,Customer Address,2026-02-19,In Transit
 SHP-3244,CAR-01,Unknown,Customer Address,2026-10-23,Delayed
-SHP-3244,CAR-01,WH-E,Customer Address,2026-10-23,Delayed
 SHP-3246,CAR-04,WH-A,Customer Address,2026-10-08,Unknown
 SHP-3247,CAR-03,WH-N,Unknown,2025-12-19,Unknown
 SHP-3248,CAR-02,WH-N,Customer Address,2024-01-15,Delivered
@@ -3801,7 +3761,6 @@ SHP-4119,CAR-03,WH-E,Customer Address,,In Transit
 SHP-4120,CAR-04,WH-N,Customer Address,2024-01-23,Processing
 SHP-4121,CAR-03,WH-A,Customer Address,2025-03-31,In Transit
 SHP-4122,CAR-04,WH-A,Unknown,2024-10-02,In Transit
-SHP-4122,CAR-04,WH-A,Customer Address,2024-10-02,In Transit
 SHP-4124,CAR-01,WH-E,Customer Address,2025-07-26,Delayed
 SHP-4125,CAR-04,WH-E,Customer Address,,Delivered
 SHP-4126,CAR-03,WH-A,Customer Address,,Delayed
@@ -3812,7 +3771,6 @@ SHP-4130,CAR-01,WH-N,Customer Address,2025-02-23,Processing
 SHP-4131,CAR-04,WH-A,Customer Address,2024-06-10,Processing
 SHP-4133,CAR-02,WH-N,Customer Address,2024-04-17,In Transit
 SHP-4134,Unknown,WH-N,Customer Address,2024-05-01,Processing
-SHP-4134,CAR-03,WH-N,Customer Address,2024-05-01,Processing
 SHP-4136,CAR-03,WH-N,Customer Address,2026-07-27,Unknown
 SHP-4137,CAR-02,WH-E,Customer Address,2025-06-16,In Transit
 SHP-4138,CAR-03,WH-N,Customer Address,2025-03-15,Delayed
@@ -3865,7 +3823,6 @@ SHP-4187,CAR-03,WH-E,Customer Address,2026-01-27,Unknown
 SHP-4188,CAR-02,WH-E,Customer Address,2026-01-22,In Transit
 SHP-4189,CAR-04,WH-A,Customer Address,2025-06-25,Processing
 SHP-4191,Unknown,WH-A,Customer Address,2026-06-17,Delivered
-SHP-4191,CAR-01,WH-A,Customer Address,2026-06-17,Delivered
 SHP-4193,CAR-04,WH-E,Customer Address,2024-02-22,Delayed
 SHP-4194,CAR-04,WH-N,Unknown,2025-08-26,Processing
 SHP-4195,CAR-04,WH-E,Customer Address,2026-05-16,Delivered
@@ -3894,7 +3851,6 @@ SHP-4217,CAR-02,WH-A,Customer Address,2024-06-15,Unknown
 SHP-4218,CAR-03,WH-A,Customer Address,2026-09-06,Processing
 SHP-4219,CAR-02,WH-N,Customer Address,2024-02-19,Processing
 SHP-4220,Unknown,WH-E,Customer Address,2026-04-24,Unknown
-SHP-4220,CAR-02,WH-E,Customer Address,2026-04-24,Delayed
 SHP-4222,CAR-04,WH-N,Customer Address,2025-02-19,In Transit
 SHP-4223,CAR-04,WH-N,Customer Address,2024-08-18,Processing
 SHP-4224,CAR-01,WH-E,Customer Address,2024-09-14,Processing
@@ -3988,12 +3944,10 @@ SHP-4321,CAR-03,WH-A,Customer Address,2024-01-25,In Transit
 SHP-4322,CAR-03,WH-N,Customer Address,2024-08-12,In Transit
 SHP-4323,CAR-02,WH-N,Customer Address,2024-10-21,Delivered
 SHP-4324,CAR-02,WH-E,Unknown,,In Transit
-SHP-4324,CAR-02,WH-E,Customer Address,2025-10-29,In Transit
 SHP-4326,CAR-03,WH-N,Customer Address,2025-04-12,Processing
 SHP-4327,CAR-03,WH-N,Customer Address,2024-01-19,In Transit
 SHP-4328,CAR-01,WH-N,Customer Address,2024-07-24,Unknown
 SHP-4329,CAR-03,Unknown,Customer Address,2025-01-12,In Transit
-SHP-4329,CAR-03,WH-E,Customer Address,2025-01-12,In Transit
 SHP-4331,CAR-02,WH-E,Customer Address,2025-08-14,Delayed
 SHP-4332,CAR-02,WH-E,Customer Address,2026-04-20,Delayed
 SHP-4333,CAR-01,WH-E,Customer Address,2026-06-17,Processing
@@ -4407,7 +4361,6 @@ SHP-4781,CAR-03,WH-N,Customer Address,2024-12-23,In Transit
 SHP-4782,CAR-03,WH-N,Customer Address,2026-04-21,In Transit
 SHP-4783,CAR-01,WH-N,Customer Address,2025-09-29,In Transit
 SHP-4784,CAR-03,Unknown,Customer Address,2026-04-16,In Transit
-SHP-4784,CAR-03,WH-A,Customer Address,2026-04-16,In Transit
 SHP-4786,CAR-04,WH-E,Customer Address,2024-05-01,Delivered
 SHP-4787,CAR-04,WH-N,Customer Address,2025-04-08,Processing
 SHP-4788,CAR-02,WH-E,Customer Address,2026-02-16,In Transit
@@ -4507,7 +4460,6 @@ SHP-4890,CAR-02,WH-N,Customer Address,2025-01-16,In Transit
 SHP-4891,CAR-04,WH-A,Customer Address,2025-09-15,In Transit
 SHP-4892,CAR-03,WH-N,Customer Address,2024-04-30,Processing
 SHP-4894,CAR-02,WH-A,Unknown,2025-10-19,Processing
-SHP-4894,CAR-02,WH-A,Customer Address,2025-10-19,Processing
 SHP-4896,CAR-03,WH-N,Customer Address,2026-08-17,Delivered
 SHP-4897,CAR-04,WH-E,Customer Address,2026-04-15,Delivered
 SHP-4898,CAR-01,WH-A,Customer Address,2025-02-09,Processing
@@ -4517,7 +4469,6 @@ SHP-4901,CAR-04,WH-A,Customer Address,2026-08-12,Delayed
 SHP-4902,CAR-02,WH-N,Customer Address,2024-12-18,Processing
 SHP-4903,Unknown,WH-E,Customer Address,2026-01-16,Delayed
 SHP-4904,CAR-03,WH-A,Customer Address,2025-10-09,Unknown
-SHP-4904,CAR-03,WH-A,Customer Address,2025-10-09,Delivered
 SHP-4906,CAR-02,WH-A,Customer Address,2026-07-15,In Transit
 SHP-4907,CAR-04,WH-A,Customer Address,2024-06-07,Processing
 SHP-4909,CAR-01,WH-E,Customer Address,2026-03-17,Processing
