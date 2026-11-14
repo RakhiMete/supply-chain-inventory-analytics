@@ -139,3 +139,5 @@ FROM warehouses w
 JOIN warehouse_inventory wi ON wi.WarehouseID = w.WarehouseID
 GROUP BY w.WarehouseName, w.CapacityUnits
 ORDER BY utilization_pct DESC;
+
+
