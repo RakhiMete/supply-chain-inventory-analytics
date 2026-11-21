@@ -128,7 +128,7 @@ insights = [
      "Capture actual delivery dates so delay causes can be measured properly."),
     ("Demand is stable with modest growth",
      "Average monthly units demanded: " + ", ".join(f"{y}: {v:,.0f}" for y, v in yearly.items()) +
-     f" ({growth:+.1f}% from first to last year). Product shares range from {prod_share.min():.1f}% to "
+     f" ({growth:+.1f}% in monthly average from 2024 to 2026; 2026 covers Jan-Oct only). Product shares range from {prod_share.min():.1f}% to "
      f"{prod_share.max():.1f}%, led by {prod.idxmax()}.",
      "A steady reorder policy fits this demand; large seasonal buffers are not needed."),
 ]
@@ -138,14 +138,22 @@ limitations = [
     "Shipment dates are not linked to order dates, and there are no delivery dates; delays use shipment status only.",
     "All stock movements are inbound, so inventory turnover cannot be calculated.",
     "Only a few suppliers, materials and warehouses exist, so rankings are indicative.",
-    "The last month of sales data is partial and was excluded from monthly averages.",
+    "The last month of sales data is partial and was excluded from monthly averages.",    "Warehouse capacities (30,000 / 25,000 / 25,000 units) are assumed, so utilization figures are illustrative.",
+    "Joins from orders to their lines or shipments leave out rows whose parent record was removed during cleaning, so linked spend totals are lower than totals over all order lines.",    
 ]
 
+same_material = top_spend_mat == top_val_mat
+material_sentence = (
+    f"{top_spend_mat} drives {top_spend_share:.1f}% of procurement spend and also makes up "
+    f"{top_val_share:.1f}% of stock value. " if same_material else
+    f"{top_spend_mat} drives {top_spend_share:.1f}% of procurement spend, and {top_val_mat} makes up "
+    f"{top_val_share:.1f}% of stock value. "
+)
 exec_summary = (
     f"This report analyses procurement, inventory, shipping and demand data for a supply chain with "
     f"{len(c['suppliers'])} suppliers, {len(mat)} raw materials and {len(wh)} warehouses. "
-    f"{top_spend_mat} drives {top_spend_share:.1f}% of procurement spend, and {top_val_mat} makes up "
-    f"{top_val_share:.1f}% of stock value. About {delayed_pct:.1f}% of shipments are delayed across the whole "
+    + material_sentence +
+    f"About {delayed_pct:.1f}% of shipments are delayed across the whole "
     f"network and {overall_cancel:.1f}% of purchase orders are cancelled. Demand is steady, so the main "
     f"opportunities are stock rebalancing, supplier management and better delivery-date tracking."
 )
@@ -229,8 +237,90 @@ for label, s in [("PO line quantity", pol["Quantity"]), ("PO unit cost", pol["Un
     stat.append([label, f"{s.count():,}", f"{s.mean():,.1f}", f"{s.std():,.1f}",
                  f"{s.min():,.1f}", f"{s.median():,.1f}", f"{s.max():,.1f}"])
 story += [make_table(stat, [4.6 * cm, 1.8 * cm, 2.2 * cm, 2.2 * cm, 2 * cm, 2.2 * cm, 2.2 * cm]), PageBreak()]
+# ---------- Analysis findings (tables) and SQL section ----------
+cell = ParagraphStyle("cell", parent=body, fontSize=8.5, leading=11)
 
-story += [Paragraph("5. Visualizations", h1)]
+def text_table(data, widths):
+    t = Table(data, colWidths=widths, repeatRows=1)
+    t.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#1F3A5F")),
+        ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+        ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+        ("FONTSIZE", (0, 0), (-1, -1), 8.5),
+        ("GRID", (0, 0), (-1, -1), 0.25, colors.grey),
+        ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#F2F5F9")]),
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+    ]))
+    return t
+
+# Table 1: stock on hand
+piv = inv.pivot_table(index="MaterialName", columns="WarehouseName", values="QuantityOnHand",
+                      aggfunc="sum", margins=True, margins_name="Total")
+t_stock = [["Material"] + list(piv.columns)] + [[i] + [f"{int(v):,}" for v in row] for i, row in piv.iterrows()]
+
+# Table 2: supplier scorecard
+pol_po = pol.merge(po[["PO_ID", "SupplierID"]].drop_duplicates("PO_ID"), on="PO_ID")
+sup["Spend"] = sup["SupplierID"].map(pol_po.groupby("SupplierID")["LineTotal"].sum())
+t_sup = [["Supplier", "On-time", "Quality", "Lead time (days)", "PO cancelled", "Spend"]]
+for _, r in sup.sort_values("Spend", ascending=False).iterrows():
+    t_sup.append([r["SupplierName"], f"{r['OnTimeDeliveryRate'] * 100:.1f}%",
+                  "n/a" if pd.isna(r["QualityScore"]) else f"{r['QualityScore']:.2f}",
+                  f"{r['AverageLeadTime_Days']:.0f}", f"{r['CancelRate']:.1f}%", f"{r['Spend']:,.0f}"])
+
+# Table 3: shipment status mix by carrier
+ct = known[known["CarrierID"] != "Unknown"].merge(c["carriers"], on="CarrierID")
+mix = (pd.crosstab(ct["CarrierName"], ct["Status"], normalize="index") * 100).round(1)
+t_mix = [["Carrier"] + list(mix.columns)] + [[i] + [f"{v:.1f}%" for v in row] for i, row in mix.iterrows()]
+
+# Table 4: product demand
+dem = (sales.groupby("ProductName")
+       .agg(orders=("SalesOrderID", "count"), units=("Quantity", "sum"))
+       .sort_values("units", ascending=False))
+t_dem = [["Product", "Orders", "Units", "Share", "Avg order size"]]
+for pname, r in dem.iterrows():
+    t_dem.append([pname, f"{int(r['orders']):,}", f"{int(r['units']):,}",
+                  f"{r['units'] / dem['units'].sum() * 100:.1f}%", f"{r['units'] / r['orders']:.1f}"])
+t_dem.append(["Total", f"{int(dem['orders'].sum()):,}", f"{int(dem['units'].sum()):,}", "100.0%",
+              f"{dem['units'].sum() / dem['orders'].sum():.1f}"])
+
+story += [Paragraph("5. Analysis Findings", h1),
+          Paragraph("Stock on hand by material and warehouse (units)", h2), Spacer(1, 4),
+          make_table(t_stock, [4.6 * cm] + [3.1 * cm] * (len(t_stock[0]) - 1)), Spacer(1, 10),
+          Paragraph("Supplier scorecard", h2), Spacer(1, 4),
+          make_table(t_sup, [4.2 * cm, 2.2 * cm, 2.0 * cm, 2.8 * cm, 2.6 * cm, 3.0 * cm]),
+          Paragraph("Spend counts only order lines linked to a purchase order. Quality score is not recorded for every supplier.", cap),
+          Spacer(1, 10),
+          Paragraph("Shipment status mix by carrier (% of shipments with a known status)", h2), Spacer(1, 4),
+          make_table(t_mix, [5.2 * cm] + [2.9 * cm] * (len(t_mix[0]) - 1)), Spacer(1, 10),
+          Paragraph("Product demand", h2), Spacer(1, 4),
+          make_table(t_dem, [5.4 * cm, 2.6 * cm, 3.0 * cm, 2.4 * cm, 3.0 * cm]),
+          PageBreak()]
+
+# SQL section: values below were taken from the verified MySQL outputs
+sql_rows = [
+    ("1", "Total inventory", "54,643 units on hand; stock value 377,284."),
+    ("2", "Products with low stock", "4 material-warehouse positions are below 50% of that material's average. Lowest: Ghana Cocoa Beans at the Euro Hub (625 units)."),
+    ("3", "Supplier-wise orders", "Purchase orders: Dairy Farms United 279, Global Sweeteners 273, Cocoa World 261, Packaging Pros 249 (1,062 in total)."),
+    ("4", "Delayed shipments", "About 25% of shipments are Delayed for every carrier (25.0%-25.9%) and origin warehouse (23.5%-25.9%)."),
+    ("5", "Warehouse inventory", "Asia-Pacific 23,477 units (43.0%), Euro Hub 15,882 (29.1%), North America 15,284 (28.0%)."),
+    ("6", "Average delivery time", "Planned lead time is 28.2-30.3 days for every supplier, while the supplier table lists 19-35 days."),
+    ("7", "Suppliers ranked by order quantity", "1) Dairy Farms United 796,484 units; 2) Global Sweeteners 703,023; 3) Cocoa World 699,953; 4) Packaging Pros 686,105."),
+    ("8", "Monthly order trends", "Peak month is January 2025: 153 orders and 16,846 units (+42.2% on the previous month)."),
+    ("9", "Product demand", "Enchanted Milk Chocolate leads with 121,041 units (26.6%); all four products are between 23.1% and 26.6%."),
+    ("10", "Warehouse utilization", "Asia-Pacific 78.3%, Euro Hub 63.5%, North America 61.1% (capacities are assumed)."),
+]
+sql_data = [["#", "SQL task", "Key result"]] + [[n, Paragraph(t, cell), Paragraph(r, cell)] for n, t, r in sql_rows]
+story += [Paragraph("6. SQL Analysis", h1),
+          Paragraph("The cleaned tables were loaded into MySQL and the ten required tasks were written as SQL "
+                    "queries (see the sql folder of the repository). Techniques used include multi-table joins, "
+                    "CTEs and window functions (RANK, LAG, AVG and SUM OVER). The results below come from the "
+                    "MySQL output and were cross-checked against the Pandas analysis.", body),
+          Spacer(1, 6), text_table(sql_data, [0.8 * cm, 4.4 * cm, 11.8 * cm]), Spacer(1, 8),
+          Paragraph("Delivery time uses planned lead time because no actual delivery dates exist; delayed shipments "
+                    "use the Status field; warehouse capacities are assumed.", cap),
+          PageBreak()]
+
+story += [Paragraph("7. Visualizations", h1)]
 charts = [("01_inventory_histogram.png", "Figure 1: Inventory distribution"),
           ("02_supplier_performance.png", "Figure 2: Supplier performance"),
           ("03_warehouse_stock.png", "Figure 3: Warehouse stock by material"),
@@ -249,17 +339,17 @@ for fn, caption in charts:
         print("WARNING: missing chart", fn)
 story.append(PageBreak())
 
-story += [Paragraph("6. Business Insights", h1)]
+story += [Paragraph("8. Business Insights", h1)]
 for i, (t, finding, rec) in enumerate(insights, 1):
     story += [Paragraph(f"{i}. {t}", h2), Paragraph(finding, body),
               Paragraph(f"<b>Recommendation:</b> {rec}", body), Spacer(1, 6)]
 
-story += [Paragraph("7. Conclusion", h1),
+story += [Paragraph("9. Conclusion", h1),
           Paragraph("The analysis shows a stable demand pattern with the main risks in stock placement, "
                     "supplier management and delivery tracking rather than in demand volatility. "
                     "Priorities are: rebalance stock of the highest-value material, build a supplier "
                     "scorecard, and record real delivery dates so delay causes can be measured.", body),
-          Spacer(1, 8), Paragraph("Data limitations", h2)]
+          PageBreak(), Paragraph("Data limitations", h1)]
 for t in limitations:
     story.append(Paragraph(t, bullet, bulletText="-"))
 

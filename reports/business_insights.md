@@ -1,10 +1,10 @@
 # Business Insights - Supply Chain and Inventory Analytics Report
 
-Prepared by Rakhi Mete, 12 November 2026
+Prepared by Rakhi Mete, 21 November 2026
 
 ## Executive summary
 
-This report analyses procurement, inventory, shipping and demand data for a supply chain with 4 suppliers, 4 raw materials and 3 warehouses. Ghana Cocoa Beans drives 57.7% of procurement spend, and Ghana Cocoa Beans makes up 40.5% of stock value. About 25.1% of shipments are delayed across the whole network and 22.9% of purchase orders are cancelled. Demand is steady, so the main opportunities are stock rebalancing, supplier management and better delivery-date tracking.
+This report analyses procurement, inventory, shipping and demand data for a supply chain with 4 suppliers, 4 raw materials and 3 warehouses. Ghana Cocoa Beans drives 57.7% of procurement spend and also makes up 40.5% of stock value. About 25.1% of shipments are delayed across the whole network and 22.9% of purchase orders are cancelled. Demand is steady, so the main opportunities are stock rebalancing, supplier management and better delivery-date tracking.
 
 ## Insights and recommendations
 
@@ -40,7 +40,7 @@ About 25.1% of shipments are marked Delayed. The rate ranges only from 25.0% to 
 
 **6. Demand is stable with modest growth**
 
-Average monthly units demanded: 2024: 12,803, 2025: 13,468, 2026: 13,631 (+6.5% from first to last year). Product shares range from 23.1% to 26.6%, led by Enchanted Milk Chocolate.
+Average monthly units demanded: 2024: 12,803, 2025: 13,468, 2026: 13,631 (+6.5% in monthly average from 2024 to 2026; 2026 covers Jan-Oct only). Product shares range from 23.1% to 26.6%, led by Enchanted Milk Chocolate.
 
 *Recommendation:* A steady reorder policy fits this demand; large seasonal buffers are not needed.
 
@@ -51,3 +51,5 @@ Average monthly units demanded: 2024: 12,803, 2025: 13,468, 2026: 13,631 (+6.5% 
 - All stock movements are inbound, so inventory turnover cannot be calculated.
 - Only a few suppliers, materials and warehouses exist, so rankings are indicative.
 - The last month of sales data is partial and was excluded from monthly averages.
+- Warehouse capacities (30,000 / 25,000 / 25,000 units) are assumed, so utilization figures are illustrative.
+- Joins from orders to their lines or shipments leave out rows whose parent record was removed during cleaning, so linked spend totals are lower than totals over all order lines.
